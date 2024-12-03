@@ -1,0 +1,503 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+** start of undefined **
+
+/* Custom properties/variables  */
+:root {
+ --main-white: #f0f0f0;
+ --main-red: red;
+ --main-blue: #45567d;
+ --main-gray: black;
+}
+
+
+
+
+* {
+ margin: 0;
+ padding: 0;
+}
+
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+ box-sizing: inherit;
+}
+
+
+html {
+ box-sizing: border-box;
+
+
+ /* Set font size for easy rem calculations
+  * default document font size = 16px, 1rem = 16px, 100% = 16px
+  * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+ */
+ font-size: 62.5%;
+ scroll-behavior: smooth;
+}
+
+
+
+
+@media (max-width: 75em) {
+ html {
+   font-size: 60%;
+ }
+}
+
+
+@media (max-width: 61.25em) {
+ html {
+   font-size: 58%;
+ }
+}
+
+
+@media (max-width: 28.75em) {
+ html {
+   font-size: 55%;
+ }
+}
+
+
+
+
+body {
+ font-family: Roboto, sans-serif;
+ font-size: 1.6rem; /* 18px */
+ font-weight: 400;
+ line-height: 1.4;
+ color: black;
+ text-align: left;
+}
+
+
+h1,
+h2 {
+ font-family: Roboto, sans-serif;
+ font-weight: 500;
+ 
+ }
+
+
+h1 {
+ font-size: 6rem;
+ text-align: left;
+}
+
+
+h2 {
+ font-size: 4.2rem;
+ text-align: center;
+}
+
+
+ul {
+ list-style: none;
+}
+
+
+a {
+ text-decoration: none;
+ color: var(--main-white);
+}
+p {max-width: 1000px;}
+
+img {
+ display: block;
+ width: 100%;
+}
+
+
+/* nav */
+
+
+.nav {
+ display: flex;
+ justify-content: flex-end;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ background: black;
+ box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+ z-index: 10;
+}
+
+
+.nav-list {
+ display: flex;
+ margin-right: 2rem;
+}
+
+
+@media (max-width: 28.75em) {
+ .nav {
+   justify-content: center;
+ }
+
+
+ .nav-list {
+   margin: 0 1rem;
+ }
+}
+
+
+.nav-list a {
+ display: block;
+ font-size: 2.2rem;
+ padding: 2rem;
+}
+
+
+.nav-list a:hover {
+ background: var(--main-red);
+}
+
+
+/* Welcome section */
+
+
+.welcome-section {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ 
+ width: 100%;
+ height: 50vh;
+ background-color: #000;
+ background-image: linear-gradient(62deg, white 0%, beige 100%);
+}
+
+
+.welcome-section > p {
+ font-size: 3rem;
+ font-weight: 200;
+ font-style: normal;
+ color: black;
+ max-width: 1000px;
+}
+.welcome-section > h1 {align-text: left;}
+
+/* Projects section */
+
+
+.projects-section {
+ text-align: center;
+ padding: 10rem 2rem;
+ background: var(--main-blue);
+ 
+}
+
+
+.projects-section-header {
+ max-width: 640px;
+ margin: 0 auto 6rem auto;
+ border-bottom: 0.2rem solid var(--main-white);
+}
+
+
+@media (max-width: 28.75em) {
+ .projects-section-header {
+   font-size: 4rem;
+ }
+}
+
+
+.projects-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+ grid-gap: 4rem;
+ width: 100%;
+ max-width: 1280px;
+ margin: 0 auto;
+ margin-bottom: 6rem;
+}
+
+
+@media (max-width: 30.625em) {
+ .projects-section {
+   padding: 6rem 1rem;
+ }
+
+
+ .projects-grid {
+   grid-template-columns: 1fr;
+ }
+}
+
+
+.project {
+ background: var(--main-gray);
+ box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+ border-radius: 2px;
+}
+
+
+.code {
+ color: var(--main-gray);
+ transition: color 0.3s ease-out;
+}
+
+
+.project:hover .code {
+ color: white;
+}
+
+
+.project-image {
+ height: calc(100% - 6.8rem);
+ width: 100%;
+ object-fit: cover;
+}
+
+
+.project-title {
+ font-size: 2rem;
+ padding: 2rem 0.5rem;
+}
+
+
+.btn {
+ display: inline-block;
+ padding: 1rem 2rem;
+ border-radius: 2px;
+}
+
+
+.btn-show-all {
+ font-size: 2rem;
+ background: black;
+ transition: background 0.3s ease-out;
+}
+
+
+.btn-show-all:hover {
+ background: var(--main-red);
+}
+
+
+.btn-show-all:hover > i {
+ transform: translateX(2px);
+}
+
+
+.btn-show-all > i {
+ margin-left: 10px;
+ transform: translateX(0);
+ transition: transform 0.3s ease-out;
+}
+
+
+
+
+
+
+.contact-section {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ width: 100%;
+ height: 50vh;
+ padding: 0 2rem;
+ background-color: #000;
+ background-image: linear-gradient(62deg, white 0%, beige 100%);
+}
+
+
+.contact-section-header > h2 {
+ font-size: 6rem;
+}
+
+
+@media (max-width: 28.75em) {
+ .contact-section-header > h2 {
+   font-size: 4rem;
+ }
+}
+
+
+.contact-section-header > p {
+ font-style: italic;
+}
+
+
+.contact-links {
+ display: flex;
+ justify-content: center;
+ width: 100%;
+ max-width: 980px;
+ margin-top: 4rem;
+ flex-wrap: wrap;
+}
+
+
+.contact-details {
+ font-size: 3.4rem;
+ 
+ transition: transform 0.3s ease-out;
+ color: black;
+}
+
+.contact-details:hover {
+ transform: translateY(8px);
+}
+
+
+
+
+footer {
+ font-weight: 300;
+ display: flex;
+ justify-content: space-evenly;
+ padding: 2rem;
+ background: black;
+ border-top: 4px solid var(--main-white);
+}
+
+
+footer > p {
+ margin: 2rem;
+color: white;
+}
+
+
+footer i {
+ vertical-align: middle;
+}
+
+
+@media (max-width: 28.75em) {
+ footer {
+   flex-direction: column;
+   text-align: center;
+ }
+}
+
+
+
+
+
+** end of undefined **
+
+ 
+</head>
+<body>
+
+<nav id="navbar" class="nav">
+      <ul class="nav-list">
+        <li>
+          <a href="#welcome-section">About</a>
+        </li>
+        <li>
+          <a href="#projects">Work</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+<section id="welcome-section" class="welcome-section">
+  <p><br><br></p>
+<h1>Daniele Bragalone</h1>
+<h1>Interaction Designer</h1>
+<br>
+<p>Creating user-centred solutions with a focus on achieving business outcomes. Currently based in London and designing data driven solutions for the UK Civil Service.</p><br>
+</section>
+
+<section id="projects" class="projects">
+  <br><h2 class="projects-section-header">My recent projects</h2>
+
+      <div class="projects-grid">
+        <a href="https://codepen.io/Danilone70/pen/pvzJMXB" target="_blank" class="project-tile">
+          <img class="project-image" src="https://stevejobstribute.netlify.app/steve_jobs-wide.jpg" alt="Steve Jobs holding his chin in a thinking pose"/> 
+          <p class="project-title">
+<span class="code">&lt;</span>Tribute Page        <span class="code">/&gt;</span>
+          </p>
+        </a>
+        <a href="https://codepen.io/Danilone70/pen/qEWdeza" target="_blank" class="project project-tile">
+          
+          <img class="project-image"src="https://assets.interaction-design.org/build/assets/ixdf-logo--white-7sMSwYaM.svg" width="300" height="300" alt="Interaction Design Foundation UX courses">
+          
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Product Landing Page
+            <span class="code">/&gt;</span>
+          </p>
+        </a>
+        <a href="https://codepen.io/Danilone70/pen/ByBNXxY" target="_blank" class="project project-tile">
+          <img class="project-image" src="https://photos.google.com/photo/AF1QipMVgQswWtcCqnbg7hWh6ViL7XkqZ5Fbj1-xs9my"        alt="survey-project">
+          <p class="project project-title">
+            <span class="code">&lt;</span>
+            Build a Survey Form
+            <span class="code">/&gt;</span>
+          </p>
+        </a>
+        <a href="https://codepen.io/freeCodeCamp/full/mVEJag" target="_blank" class="project project-tile">
+          <img class="project-image" src="https://photos.google.com/photo/AF1QipM_r_814D1TxKAf3SAhAUCDTqHmfGn_FEWUcwTE" alt="project">
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Technical Documentation Page
+            <span class="code">/&gt;</span>
+          </p>
+        </a>
+        <a href="https://codepen.io/Danilone70/pen/ogvjvvZ" target="_blank" class="project project-tile">
+          <img class="project-image" src="https://photos.app.goo.gl/ZzbF24fbzH8nqeE98" alt="technical-doc-project">
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Build a Magazine with CSS Grid
+            <span class="code">/&gt;</span>
+          </p>
+        </a>
+        <a href="https://codepen.io/Danilone70/pen/xbKwKxO" target="_blank" class="project project-tile">
+          <img class="project-image" src="https://codepen.io/Danilone70/pen/xbKwKxO" alt="project">
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Learn CSS Variables by Building a City Skyline
+            <span class="code">/&gt;</span>
+          </p>
+        </a>
+      </div>
+
+      <a id="profile-link" href="https://www.freecodecamp.org/fcc5f258fe1-329e-4d46-8ef3-ccfa66e924fe" class="btn btn-show-all" target="_blank">See all projects<i class="fas fa-chevron-right"></i></a>
+
+<section id="contact" class="contact-section">
+      <div class="contact-section-header">
+        <h2>Let's collaborate! </h2>
+        
+      </div>
+      
+   
+        
+        <p><a href="mailto:example@example.com" class="btn contact-details"><i class="contact-details"></i> Send me a message</p> <svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#000000"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg></a>
+        
+      </div>
+    </section>  
+ 
+<footer>
+      
+      <p>
+        © Created by Spazio DB Design 2024
+        
+      </p>
+    </footer>
+</body>
+ 
+
+  </html>
+
+** end of undefined **
+
